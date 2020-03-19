@@ -1,0 +1,16 @@
+version: "1.0"
+steps:
+  create_variable:
+    title: Using custom typed step to create variable..
+    type: anna-codefresh/dummy
+#   use_variable_without_brackets:
+#     title: Using exported variable..
+#     image: alpine:3.9
+#     commands:
+#       - cat $CF_VOLUME_PATH/env_vars_to_export
+#       - echo $MY_VAR
+  use_vault_secret_with_brackets:
+    title: Using variable with brackets..
+    image: alpine:3.9
+    commands:
+      - echo ${{MY_VAR}}

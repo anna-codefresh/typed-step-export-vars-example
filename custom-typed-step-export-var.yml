@@ -1,0 +1,24 @@
+version: '1.0'
+kind: step-type
+metadata:
+  name: anna-codefresh/dummy
+  version: '0.0.2'
+  isPublic: true
+  description: >-
+    Dummy plugin for exporting environment variables and checking syntax.
+  stage: incubating
+  maintainers:
+    - name: Anna Baker
+  categories:
+    - featured
+  official: false
+  tags: []
+  latest: true
+spec:
+  steps:
+    main:
+      name: anna-codefresh/dummy
+      image: alpine:3.9
+      commands:
+        - 'echo MY_VAR=MY_VAULE >> ${{CF_VOLUME_PATH}}/env_vars_to_export'
+
